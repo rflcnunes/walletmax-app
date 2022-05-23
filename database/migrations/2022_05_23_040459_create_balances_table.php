@@ -21,8 +21,6 @@ return new class extends Migration
                 ->onDelete('cascade');
             $table->enum('type', ['Debit', 'Credit']);
             $table->double('value', 10, 2);
-            $table->double('total_before_transaction', 10, 2);
-            $table->double('total_after_transaction', 10, 2);
             $table->date('date');
         });
     }
