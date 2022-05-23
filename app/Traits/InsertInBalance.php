@@ -11,13 +11,11 @@ trait InsertInBalance
 {
     private $debitService;
     private $creditService;
-    private $balanceService;
 
-    public function __construct(DebitService $debitService, CreditService $creditService, BalanceService $balanceService)
+    public function __construct(DebitService $debitService, CreditService $creditService)
     {
         $this->debitService = $debitService;
         $this->creditService = $creditService;
-        $this->balanceService = $balanceService;
     }
 
     public function insertDebitInBalance($debit)
