@@ -21,7 +21,7 @@ class DebitRepository implements DebitRepositoryInterface
         return $this->model->all();
     }
 
-    public function getAmount($id)
+    public function getBalance($id)
     {
         return $this->model
             ->find($id)

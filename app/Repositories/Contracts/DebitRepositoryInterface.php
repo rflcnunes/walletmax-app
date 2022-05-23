@@ -5,6 +5,6 @@ namespace App\Repositories\Contracts;
 interface DebitRepositoryInterface
 {
     public function getAll();
-    public function getAmount($id);
+    public function getBalance($id);
     public function getModel();
 }
