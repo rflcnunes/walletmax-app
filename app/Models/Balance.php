@@ -15,8 +15,6 @@ class Balance extends Model
         'user_id',
         'type',
         'value',
-        'total_before_transaction',
-        'total_after_transaction',
         'date'
     ];
 
