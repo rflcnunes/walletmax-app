@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Responses\ApiResponse;
 use App\Services\BalanceService;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,10 @@ class BalanceController extends Controller
     {
         $id = auth()->user()->id;
 
-        dd($this->balanceService->totalValueByUser($id));
+        $value = $this->balanceService->totalValueByUser($id);
+
+        $data = $this->balanceService->getCreditRepository()->getAll();
+
+        return new ApiResponse(true, 'Your total balance: US$' . $value, $data);
     }
 }

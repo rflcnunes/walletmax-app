@@ -29,7 +29,7 @@ class DebitController extends Controller
             return new ApiResponse(true, 'Your debit of US$' . $value . ' has been successfully made!');
 
         } catch (\Exception $exception) {
-            return new ApiResponse(false, 'Sorry, it was not possible to make the deposit!', $exception->getMessage(), 400);
+            return new ApiResponse(false, 'Sorry, it was not possible to make the debit!', $exception->getMessage(), 400);
         }
     }
 }

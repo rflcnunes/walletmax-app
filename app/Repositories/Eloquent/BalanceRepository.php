@@ -17,6 +17,11 @@ class BalanceRepository implements BalanceRepositoryInterface
         return $this->model;
     }
 
+    public function getAll()
+    {
+        return $this->model->orderBy('id', 'DESC')->get();
+    }
+
     public function getDebits($id)
     {
         return $this->model
@@ -34,4 +39,12 @@ class BalanceRepository implements BalanceRepositoryInterface
             ->where('type', '=', 'Credit')
             ->sum('value');
     }
+
+//    public function getTotalValueByUser($id)
+//    {
+//        $debits = $this->getDebits($id);
+//        $credits = $this->getCredits($id);
+//
+//        $this->model->de
+//    }
 }
