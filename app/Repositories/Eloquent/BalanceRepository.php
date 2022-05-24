@@ -17,9 +17,9 @@ class BalanceRepository implements BalanceRepositoryInterface
         return $this->model;
     }
 
-    public function getAll()
+    public function getAll($id)
     {
-        return $this->model->orderBy('id', 'DESC')->get();
+        return $this->model->find($id)->where('user_id', '=', $id)->orderBy('id', 'DESC')->get();
     }
 
     public function getDebits($id)
