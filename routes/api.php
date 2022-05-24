@@ -39,4 +39,5 @@ Route::controller(CreditController::class)->group(function () {
 
 Route::controller(BalanceController::class)->group(function () {
    Route::get('/balance', 'getBalanceByUser')->middleware('jwt.auth');
+   Route::get('/balance/json', 'getTotalBalance')->middleware('jwt.auth');
 });
