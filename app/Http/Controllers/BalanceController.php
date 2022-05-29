@@ -15,15 +15,6 @@ class BalanceController extends Controller
         $this->balanceService = $balanceService;
     }
 
-    public function getBalanceByUser()
-    {
-        $id = auth()->user()->id;
-
-        $value = $this->balanceService->totalValueByUser($id);
-
-        return new ApiResponse(true, 'Your total balance: US$' . $value);
-    }
-
     public function historic()
     {
         $id = auth()->user()->id;
@@ -42,10 +33,6 @@ class BalanceController extends Controller
             'value' => $this->balanceService->totalValueByUser($id)
         ];
 
-
-//        return  . $user_name;
-        return response()->json([
-            'data' => $data
-        ]);
+        return new ApiResponse(true, 'Personal Data', $data);
     }
 }

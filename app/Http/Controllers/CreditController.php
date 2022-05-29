@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreditRequest;
 use App\Http\Responses\ApiResponse;
-use App\Services\BalanceService;
 use App\Services\CreditService;
-use Illuminate\Http\Request;
 
 class CreditController extends Controller
 {
@@ -17,7 +15,7 @@ class CreditController extends Controller
         $this->creditService = $creditService;
     }
 
-    public function credit(CreditRequest $request, BalanceService $balanceService)
+    public function credit(CreditRequest $request)
     {
         try {
             $value = $request -> value;
