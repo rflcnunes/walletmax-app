@@ -25,7 +25,7 @@ class CreditController extends Controller
                 'value' => $request->value
             ]);
 
-            return new ApiResponse(true, 'Your credit of US$' . $value . ' has been successfully made!');
+            return new ApiResponse(true, 'Your credit has been successfully made!', 'Value: ' . $value, 201);
 
         } catch (\Exception $exception) {
             return new ApiResponse(false, 'Sorry, it was not possible to make the credit!', $exception->getMessage(), 400);

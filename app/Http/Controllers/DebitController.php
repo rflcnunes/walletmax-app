@@ -27,11 +27,11 @@ class DebitController extends Controller
 
             if (!$debit === true) {
 
-                return ($value === 0) ? new ApiResponse(false, 'Debit value must be greater than 0') : new ApiResponse(false, 'You do not have enough balance');
+                return ($value === 0) ? new ApiResponse(false, 'Debit value must be greater than 0',null, 406) : new ApiResponse(false, 'You do not have enough balance', false, 406);
 
             }
 
-            return new ApiResponse(true, 'Your debit was successful');
+            return new ApiResponse(true, 'Your debit was successful', $debit, 201);
 
         } catch (\Exception $exception) {
             return new ApiResponse(false, 'Sorry, it was not possible to make the debit!', $exception->getMessage(), 400);

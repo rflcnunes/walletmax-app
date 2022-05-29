@@ -20,7 +20,7 @@ class BalanceController extends Controller
 
         $historics = $this->balanceService->getBalanceRepository()->getAll($id);
 
-        return new ApiResponse(true, 'Historic', $historics);
+        return new ApiResponse(true, 'Historic', $historics, 200);
     }
 
     public function getTotalBalance()
@@ -32,6 +32,6 @@ class BalanceController extends Controller
             'value' => $this->balanceService->totalValueByUser($id)
         ];
 
-        return new ApiResponse(true, 'Personal Data', $data);
+        return new ApiResponse(true, 'Personal Data', $data, 200);
     }
 }
