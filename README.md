@@ -52,7 +52,7 @@ Method: `POST` <br>
 
 ## Success
 
-![Success_login](https://i.ibb.co/H4hsjkB/Screen-Shot-2022-05-29-at-8-24-01-PM.png)
+![Success_login](https://i.ibb.co/H4hsjkB/Screen-Shot-2022-05-29-at-8-24-01-PM.png) <br>
 Insert the token in the Postman Collection to insert the other URLs
 ![enter image description here](https://i.ibb.co/1GFYTy7/Screen-Shot-2022-05-29-at-8-45-55-PM.png)
 
