@@ -57,7 +57,7 @@ Insert the token in the Postman Collection to insert the other URLs
 ![enter image description here](https://i.ibb.co/1GFYTy7/Screen-Shot-2022-05-29-at-8-45-55-PM.png)
 
 
-# Crédito:
+# Credit:
 URL: `localhost/api/credit` <br>
 Method: `POST` <br>
 Headers: <br>
@@ -72,7 +72,7 @@ Body: *raw* <br>
 
 ![Success_credit](https://i.ibb.co/cTGSBsF/Screen-Shot-2022-05-29-at-8-25-51-PM.png)
 
-# Débito:
+# Debit:
 URL: `localhost/api/debit` <br>
 Method: `POST` <br>
 Headers: <br>
