@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\DebitRequest;
 use App\Http\Responses\ApiResponse;
 use App\Services\DebitService;
-use Illuminate\Http\Request;
 
 class DebitController extends Controller
 {
@@ -19,14 +18,18 @@ class DebitController extends Controller
     public function debit(DebitRequest $request)
     {
         try {
-            $value = $request->value;
+            $value = $request->input('value');
 
-            $this->debitService->debit([
+           $debit = $this->debitService->debit([
                 'user_id' => auth()->user()->id,
                 'value' => $request->value,
             ]);
 
-            return new ApiResponse(true, 'Your debit of US$' . $value . ' has been successfully made!');
+            if ( !$debit === true || $value === 0) {
+                return new ApiResponse(false, 'Your debit was not successful.');
+            }
+
+            return new ApiResponse(true, 'Your debit was successful');
 
         } catch (\Exception $exception) {
             return new ApiResponse(false, 'Sorry, it was not possible to make the debit!', $exception->getMessage(), 400);

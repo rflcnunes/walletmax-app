@@ -25,7 +25,7 @@ class BalanceService
     {
         $debits = $this->getCreditRepository()->getDebits($id);
         $credits = $this->getCreditRepository()->getCredits($id);
-        return $debits - $credits;
+        return $credits - $debits;
 //        return $this->getCreditRepository()->getTotalValueByUser($id);
     }
 }
