@@ -16,15 +16,15 @@ class BalanceService
     /**
      * @return BalanceRepositoryInterface
      */
-    public function getCreditRepository(): BalanceRepositoryInterface
+    public function getBalanceRepository(): BalanceRepositoryInterface
     {
         return $this->balanceService;
     }
 
     public function totalValueByUser($id)
     {
-        $debits = $this->getCreditRepository()->getDebits($id);
-        $credits = $this->getCreditRepository()->getCredits($id);
+        $debits = $this->getBalanceRepository()->getDebits($id);
+        $credits = $this->getBalanceRepository()->getCredits($id);
         return $credits - $debits;
 //        return $this->getCreditRepository()->getTotalValueByUser($id);
     }
