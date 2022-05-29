@@ -31,7 +31,7 @@ class DebitController extends Controller
 
             }
 
-            return new ApiResponse(true, 'Your debit was successful', $debit, 201);
+            return new ApiResponse(true, 'Your debit was successful', 'Value: ' . $value, 201);
 
         } catch (\Exception $exception) {
             return new ApiResponse(false, 'Sorry, it was not possible to make the debit!', $exception->getMessage(), 400);
