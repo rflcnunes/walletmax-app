@@ -21,10 +21,16 @@ class BalanceController extends Controller
 
         $value = $this->balanceService->totalValueByUser($id);
 
-        $data = $this->balanceService->getCreditRepository()->getAll($id);
+        return new ApiResponse(true, 'Your total balance: US$' . $value);
+    }
 
+    public function historic()
+    {
+        $id = auth()->user()->id;
 
-        return new ApiResponse(true, 'Your total balance: US$' . $value, $data);
+        $historics = $this->balanceService->getBalanceRepository()->getAll($id);
+
+        return new ApiResponse(true, 'Historic', $historics);
     }
 
     public function getTotalBalance()
